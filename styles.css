@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: darkgray;
+}
+
+header {
+  text-align: center;
+  background-color: lightgrey;
+  height: 120px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+main {
+  height: 400px;
+  text-align: center;
+}
+
+#translate-button {
+  color: blue;
+}
+
+output {
+  color: red;
+  border: 1px solid black;
+  height: auto;
+  width: auto;
+}
