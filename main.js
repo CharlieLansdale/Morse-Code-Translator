@@ -10,60 +10,52 @@
 // turn array back into string "..----..--.--....--...."
 // place string back into HTML from JS
 
+const button = document.querySelector("#translate-button");
+const input = document.querySelector('#input');
+const output = document.querySelector('#output');
 
-const alphabetToMorse = {
-  letterA: ".-",
-  letterB: "-...",
-  letterC: "-.-.",
-  letterD: "-..",
-  letterE: ".",
-  letterF: "..-.",
-  letterG: "--.",
-  letterH: "....",
-  letterI: "..",
-  letterJ: ".---",
-  letterK: "-.-",
-  letterL: ".-..",
-  letterM: "--",
-  letterN: "-.",
-  letterO: "---",
-  letterP: ".--.",
-  letterQ: "--.-",
-  letterR: ".-.",
-  letterS: "...",
-  letterT: "-",
-  letterU: "..-",
-  letterV: "...-",
-  letterW: ".--",
-  letterX: "-..-",
-  letterY: "-.--",
-  letterZ: "--..",
+
+
+const morseCode = {
+  A: ".-",
+  B: "-...",
+  C: "-.-.",
+  D: "-..",
+  E: ".",
+  F: "..-.",
+  G: "--.",
+  H: "....",
+  I: "..",
+  J: ".---",
+  K: "-.-",
+  L: ".-..",
+  M: "--",
+  N: "-.",
+  O: "---",
+  P: ".--.",
+  Q: "--.-",
+  R: ".-.",
+  S: "...",
+  T: "-",
+  U: "..-",
+  V: "...-",
+  W: ".--",
+  X: "-..-",
+  Y: "-.--",
+  Z: "--..",
 };
 
-const numnbersToMorse = {
-  number1: ".----",
-  number2: "..---",
-  number3: "...--",
-  number4: "....-",
-  number5: ".....",
-  number6: "-....",
-  number7: "--...",
-  number8: "---..",
-  number9: "----.",
-  number0: "-----",
+
+const convertToMorse = (str) => {
+  return str.toUpperCase().split("").map(el => {
+  return morseCode[el] ? morseCode[el] : el;
+  }).join(" / ");
 };
+console.log(convertToMorse('Morse Code Translator'));
+console.log(convertToMorse('Hes done it! The greatest night in the history of Chelsea football club...Eurpoean Champions!'));
 
-// const translateButton = document.querySelector("#translate-button");
-
-
-// translateButton.addEventListener("click", () => {
-  
-// })
-
-// const convertToMorse = (str) => {
-//   return str.toUpperCase().split("").map(el => {
-//   return alphabetToMorse[el] ? alphabetToMorse[el] : el;
-//   }).join("");
-// };
-
-// console.log(convertToMorse("Charlie"));
+button.addEventListener("click", () => {
+  const conv = convertToMorse(input.value);
+  console.log(conv);
+  output.innerHTML = conv;
+});

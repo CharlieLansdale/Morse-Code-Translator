@@ -3,29 +3,39 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  color: darkgray;
+  color: #333;
 }
 
 header {
   text-align: center;
   background-color: lightgrey;
-  height: 120px;
+  height: 160px;
   padding: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+}
+header h1,
+header h2,
+header h3 {
+  margin: 10px;
 }
 
 main {
   height: 400px;
   text-align: center;
 }
-
-#translate-button {
-  color: blue;
+main p {
+  margin: 50px;
+  color: #333;
 }
-
-output {
-  color: red;
-  border: 1px solid black;
-  height: auto;
-  width: auto;
+main #translate {
+  color: blue;
+  padding: 5px;
+  margin: 20px;
+}
+main input {
+  width: 250px;
+  margin-bottom: 20px;
+}
+main output {
+  margin-top: 20px;
 }
